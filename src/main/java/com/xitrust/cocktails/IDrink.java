@@ -1,7 +1,7 @@
 package com.xitrust.cocktails;
 
 
-public interface IDrink {
+public interface IDrink extends Comparable<IDrink> {
 
 	/**
 	 * @return namen of the drink
@@ -18,5 +18,7 @@ public interface IDrink {
 	 * @return  volumen of alcohol in the drink
 	 */
 	public double getAlcoholicVolume();
+
+	public String toString();
 
 }

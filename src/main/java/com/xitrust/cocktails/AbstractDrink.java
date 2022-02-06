@@ -8,13 +8,19 @@ public abstract class AbstractDrink implements IDrink {
 
 	/**
 	 * @param name 
-	 * @param volume in [ml]
+	 * @param volumen in [ml]
 	 * @param alcoholInPercent  in %
 	 */
 	public AbstractDrink(String name, double volumen, double alcoholInPercent) {
 		this.name = name;
 		this.volume = volumen;
 		this.alcoholicContentInPercent = alcoholInPercent;
+	}
+
+	public AbstractDrink(){
+		name = "";
+		volume = 0;
+		alcoholicContentInPercent = 0;
 	}
 
 	/**

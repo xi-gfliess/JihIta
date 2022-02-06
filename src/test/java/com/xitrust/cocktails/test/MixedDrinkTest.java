@@ -1,16 +1,17 @@
 package com.xitrust.cocktails.test;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import com.xitrust.cocktails.Barkeeper;
+import com.xitrust.cocktails.DefaultBeverageBar;
+import com.xitrust.cocktails.IBeverageBar;
+import com.xitrust.cocktails.IDrink;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.xitrust.cocktails.Barkeeper;
-import com.xitrust.cocktails.IBeverageBar;
-import com.xitrust.cocktails.IDrink;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class MixedDrinkTest {
 
@@ -18,7 +19,7 @@ public class MixedDrinkTest {
 
 	@Before
 	public void init() {
-//		bar = new DefaultBeverageBar();
+		bar = new DefaultBeverageBar();
 	}
 
 	@Test
@@ -77,7 +78,7 @@ public class MixedDrinkTest {
 		assertEquals("Cola-Rum", list.get(2).getName());
 		assertEquals("Gin-Tonic", list.get(3).getName());
 
-//		Collections.sort(list);
+		Collections.sort(list);
 
 		assertEquals("Water", list.get(0).getName());
 		assertEquals("Beer", list.get(1).getName());

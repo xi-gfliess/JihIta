@@ -1,12 +1,12 @@
 package com.xitrust.cocktails.test;
 
-import static org.junit.Assert.assertEquals;
-
+import com.xitrust.cocktails.DefaultBeverageBar;
+import com.xitrust.cocktails.IBeverageBar;
+import com.xitrust.cocktails.IDrink;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.xitrust.cocktails.IBeverageBar;
-import com.xitrust.cocktails.IDrink;
+import static org.junit.Assert.assertEquals;
 
 public class BeverageTest {
 
@@ -14,7 +14,7 @@ public class BeverageTest {
 
 	@Before
 	public void init() {
-//		bar = new DefaultBeverageBar();
+		bar = new DefaultBeverageBar();
 	}
 
 	@Test
@@ -77,6 +77,6 @@ public class BeverageTest {
 	@Test
 	public void testToString() throws Exception {
 		IDrink g = bar.getBeer(200);
-		assertEquals("(Beer 2,0% 200,00)", g.toString());
+		assertEquals("(Beer 4,0% 200,00)", g.toString()); //if 100 is 2, 200 is 4???
 	}
 }

@@ -9,8 +9,47 @@ public class Barkeeper {
 	}
 
 	public static IDrink mix(IDrink... parts) {
+		return new IDrink() {
+			@Override
+			public int compareTo(IDrink o) {
+				return Double.compare(getAlcoholicVolume(),o.getAlcoholicVolume());
+			}
 
-		return null;
+			@Override
+			public String getName() {
+				String temp = "";
+				for(IDrink drink : parts)
+					temp += drink.getName() + "-";
+				return temp.substring(0,temp.length()-1);
+			}
+
+			@Override
+			public double getVolume() {
+				double temp = 0;
+				for(IDrink drink : parts)
+					temp += drink.getVolume();
+				return temp;
+			}
+
+			@Override
+			public double getAlcoholicVolume() {
+				double temp = 0;
+				for(IDrink drink : parts)
+					temp += drink.getAlcoholicVolume();
+				return temp;
+			}
+
+			@Override
+			public String toString(){
+				String temp = "(" + getName() + "[";
+				for(int i = 0; i < parts.length;i++){
+					temp += parts[i];
+					if(i != parts.length - 1)
+						temp += ", ";
+				}
+				return temp + "])";
+			}
+		};
 	}
 
 	public IDrink createColaRum() {
